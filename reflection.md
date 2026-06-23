@@ -5,7 +5,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+The first time I ran it, I thought that it was supposed to be a number guessing game where it gave me hints on whether I had to guess higher or lower than my previous guess. However, as I finished the game, I realized there were bugs in the code that made the game not work.
 - List at least two concrete bugs you noticed at the start  
+The "new game" button does not result in a new game. When I pressed it, I expected it to start a new game but it stayed on the screen that showed I failed the challenge. The 2nd bug I noticed was that the hints were backwards. The hints showed that I had to guess a higher number when in reality, I had to guess a lower number.
   (for example: "the hints were backwards").
 
 **Bug Reproduction Log**
@@ -14,16 +16,20 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+|  50   |    guess higher   |     guess lower         No error shown         The secret number was 77
+| pressed|   
+| new game|  Make a new game       Kept exact        No error shown
+| button  |     to play           same screen
+| 50     |    guess lower         guess higher        No error show          The secret number was 24
 
 ---
 
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+Claude
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
 ---

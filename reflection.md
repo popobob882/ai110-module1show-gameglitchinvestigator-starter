@@ -16,11 +16,9 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-|  50   |    guess higher   |     guess lower         No error shown         The secret number was 77
-| pressed|   
-| new game|  Make a new game       Kept exact        No error shown
-| button  |     to play           same screen
-| 50     |    guess lower         guess higher        No error show          The secret number was 24
+|  50   |    guess higher( The secret number was 77)   |   guess lower   |      No error shown     |
+| pressed new game button | Make a new game |  Kept exact same screen |   No error shown   |      
+| 50     |    guess lower(The secret number was 24)  |       guess higher |        No error show |         
 
 ---
 

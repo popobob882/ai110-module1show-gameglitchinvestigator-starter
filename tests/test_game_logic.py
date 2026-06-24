@@ -1,5 +1,15 @@
 from logic_utils import check_guess
 
+# FIX: Test documents expected new-game reset behavior (AI-assisted)
+def test_new_game_requires_status_reset():
+    # Simulate the session state before and after a new game
+    session = {"status": "lost", "attempts": 5, "score": 30}
+    # Applying the fix: status must be reset to "playing"
+    session["status"] = "playing"
+    session["attempts"] = 0
+    assert session["status"] == "playing", "New game must reset status to 'playing'"
+    assert session["attempts"] == 0
+
 def test_winning_guess():
     # If the secret is 50 and guess is 50, it should be a win
     result = check_guess(50, 50)

@@ -116,10 +116,11 @@ with col2:
     new_game = st.button("New Game 🔁")
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
-# Fix Me: Logic seems to break here
+# FIX: Added status reset so the game-over screen clears when New Game is pressed. Done using AI agent mode.
 if new_game:
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(1, 100)
+    st.session_state.status = "playing"
     st.success("New game started.")
     st.rerun()
 

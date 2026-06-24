@@ -1,6 +1,9 @@
 import random
 import streamlit as st
+# FIX: Imported check_guess from logic_utils after refactoring and fixing the high/low bug with AI agent mode
+from logic_utils import check_guess
 
+#Fix Me: Logic seems to break here
 def get_range_for_difficulty(difficulty: str):
     if difficulty == "Easy":
         return 1, 20
@@ -28,24 +31,7 @@ def parse_guess(raw: str):
 
     return True, value, None
 
-
-def check_guess(guess, secret):
-    if guess == secret:
-        return "Win", "🎉 Correct!"
-
-    try:
-        if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
-        else:
-            return "Too Low", "📉 Go LOWER!"
-    except TypeError:
-        g = str(guess)
-        if g == secret:
-            return "Win", "🎉 Correct!"
-        if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
-
+#Fix: Removed the Check guess function from app.py and placed it in logic_utils.py. Done using ai agent mode.
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
     if outcome == "Win":
@@ -130,7 +116,7 @@ with col2:
     new_game = st.button("New Game 🔁")
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
-
+# Fix Me: Logic seems to break here
 if new_game:
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(1, 100)
@@ -154,16 +140,18 @@ if submit:
         st.error(err)
     else:
         st.session_state.history.append(guess_int)
+    #Fix: Added hint messages so that it does not do a str() cast and as a result, check_guess in logic_utils.py will always
+    # get two integers. Done using agent mode.
+        hint_messages = {
+            "Win": "🎉 Correct!",
+            "Too High": "📉 Go LOWER!",
+            "Too Low": "📈 Go HIGHER!",
+        }
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
-
-        outcome, message = check_guess(guess_int, secret)
+        outcome = check_guess(guess_int, st.session_state.secret)
 
         if show_hint:
-            st.warning(message)
+            st.warning(hint_messages[outcome])
 
         st.session_state.score = update_score(
             current_score=st.session_state.score,

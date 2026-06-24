@@ -13,7 +13,6 @@ def get_range_for_difficulty(difficulty: str):
         return 1, 50
     return 1, 100
 
-
 def parse_guess(raw: str):
     if raw is None:
         return False, None, "Enter a guess."
@@ -116,6 +115,7 @@ with col2:
     new_game = st.button("New Game 🔁")
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
+# Fix me: the logic here does not seem to make sense
 # FIX: Added status reset so the game-over screen clears when New Game is pressed. Done using AI agent mode.
 if new_game:
     st.session_state.attempts = 0

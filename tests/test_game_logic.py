@@ -1,6 +1,6 @@
 from logic_utils import check_guess
 
-# FIX: Test documents expected new-game reset behavior (AI-assisted)
+# FIX: Test documents and should expect new-game reset behavior (AI-assisted)
 def test_new_game_requires_status_reset():
     # Simulate the session state before and after a new game
     session = {"status": "lost", "attempts": 5, "score": 30}

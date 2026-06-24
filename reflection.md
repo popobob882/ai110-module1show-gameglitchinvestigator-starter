@@ -52,11 +52,21 @@ Yes, I did us AI to help me design and understand the different test cases. I fi
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
+I would say that the way Streamlit functions is that it will run everybit of the python script from top to bottom every single time the user does anything so things such as variables will reset back to their default values everytime the Streamlit reruns. AS for session states, I would say that it acts kind of like a place to store memory where anything inside the session state will stay the same between every single rerun of the Streamlit.
+
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+
+One habit that I want to reuse from this project would be to commit all the changes I made onto github after every single checkpoint as it allowed me to see the changes in my code history making it easier to spot and undo mistakes in the code.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+
+One thing I would probably do differently next time I work with AI on a coding task would be to look and understand the code AI generates more carefully before actually accepting it. That would been helpful when I tried to fix the difficulty ranges bug and would just be a good habit as to not fully trust the code AI gives out.
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+This project changed the way I think about how AI generated code often has mistakes when executing a more difficult task and that I have to be weary about the code that the AI actually generates. I should fully understand everything that AI generated and understand why its being added before I actually accept the code in my script.
